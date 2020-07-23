@@ -6,6 +6,7 @@ app.use(express.urlencoded({ extended: false })); // application/x-www-form-urle
 app.use(express.json()); // application/json
 
 app.use('/api/register', require('./routes/register'));
+app.use('/api/login', require('./routes/login'));
 
 app.use((err, req, res, next) => {
     if (err instanceof Joi.ValidationError) {
